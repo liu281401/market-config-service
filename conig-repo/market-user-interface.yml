@@ -1,0 +1,47 @@
+server:
+  port: 9003
+
+spring:
+  application:
+    name: user-interface
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML5
+    encoding: utf-8
+    servlet:
+      content-type: text/html
+  resources:
+    chain:
+      strategy:
+        content:
+          enabled: true
+          paths: /**
+  mvc:
+    static-path-pattern: /static/**
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:9001/eureka
+  instance:
+    leaseRenewalIntervalInSeconds: 5 # 每隔5秒发送一次心跳
+    leaseExpirationDurationInSeconds: 10 # 10秒不发送就过期
+    preferIpAddress: true
+    ipAddress: 127.0.0.1
+    instanceId: ${spring.application.name}:${server.port}
+
+feign:
+  hystrix:
+    enabled: true
+
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: true
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000
