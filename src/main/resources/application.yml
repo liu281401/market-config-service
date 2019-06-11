@@ -6,8 +6,19 @@ spring:
       server:
         git:
           uri: https://github.com/liu281401/market-config-service.git
-          search-paths: src/main/resources/conig-repo
+          search-paths: '{profile}'
 #          username: liu281401
 #          password: qq281401
   application:
     name: config-service
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:9001/eureka
+  instance:
+    leaseRenewalIntervalInSeconds: 5 # 每隔5秒发送一次心跳
+    leaseExpirationDurationInSeconds: 10 # 10秒不发送就过期
+    preferIpAddress: true
+    ipAddress: 127.0.0.1
+    instanceId: ${spring.application.name}:${server.port}
