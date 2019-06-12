@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: user-interface
+    name: user-interface-22
   thymeleaf:
     cache: false
     prefix: classpath:/templates/
