@@ -21,6 +21,12 @@ spring:
   mvc:
     static-path-pattern: /static/**
 
+  sleuth:
+    sampler:
+      probability: 1.0
+  zipkin:
+    base-url: http://localhost:9007/
+
 eureka:
   client:
     service-url:
