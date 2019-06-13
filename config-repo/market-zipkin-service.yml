@@ -14,3 +14,9 @@ eureka:
     ipAddress: 127.0.0.1
     instanceId: ${spring.application.name}:${server.port}
 
+management:
+  metrics:
+    web:
+      server:
+        auto-time-requests: false
+
