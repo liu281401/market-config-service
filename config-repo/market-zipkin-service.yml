@@ -3,8 +3,6 @@ server:
 spring:
   application:
     name: market-zipkin-service
-  main:
-    allow-bean-definition-overriding: true
 eureka:
   client:
     service-url:
