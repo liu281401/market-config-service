@@ -4,9 +4,9 @@ server:
 spring:
   application:
     name: market-gateway-service
-#  sleuth:
-#    sampler:
-#      probability: 1.0
+  sleuth:
+    sampler:
+      probability: 1.0
 #  zipkin:
 #    base-url: http://localhost:9007/
   rabbitmq:

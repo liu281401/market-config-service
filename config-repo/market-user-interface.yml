@@ -21,9 +21,9 @@ spring:
   mvc:
     static-path-pattern: /static/**
 
-#  sleuth:
-#    sampler:
-#      probability: 1.0
+  sleuth:
+    sampler:
+      probability: 1.0
 #  zipkin:
 #    base-url: http://localhost:9007/
   rabbitmq:
