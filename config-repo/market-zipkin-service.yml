@@ -3,11 +3,6 @@ server:
 spring:
   application:
     name: market-zipkin-service
-  rabbitmq:
-    host: 47.100.27.144
-    port: 5672
-    username: guest
-    password: guest
 eureka:
   client:
     service-url:
@@ -24,6 +19,13 @@ management:
     web:
       server:
         auto-time-requests: false
+zipkin:
+  collector:
+    rabbitmq:
+      addresses: 47.100.27.144:5672
+      password: guest
+      username: guest
+      queue: zipkin
 
 
 
