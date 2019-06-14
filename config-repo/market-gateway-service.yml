@@ -4,11 +4,19 @@ server:
 spring:
   application:
     name: market-gateway-service
-  sleuth:
-    sampler:
-      probability: 1.0
-  zipkin:
-    base-url: http://localhost:9007/
+#  sleuth:
+#    sampler:
+#      probability: 1.0
+#  zipkin:
+#    base-url: http://localhost:9007/
+  rabbitmq:
+    host: 47.100.27.144
+    port: 5672
+    username: guest
+    password: guest
+    zipkin:
+      rabbitmq:
+        queue: zipkin
 
 eureka:
   client:
