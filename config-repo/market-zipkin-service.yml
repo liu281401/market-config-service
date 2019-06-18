@@ -26,6 +26,15 @@ zipkin:
       password: guest
       username: guest
       queue: zipkin
-
+  storage:
+    type: elasticsearch
+    elasticsearch:
+      hosts: http://47.100.27.144:9200
+      #      username: elastic
+      #      password: changeme
+      cluster: elasticsearch
+      index: zipkin
+      index-shards: 1
+      index-replicas: 1
 
 
